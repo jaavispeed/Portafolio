@@ -16,8 +16,8 @@ export default class LandingPageComponent {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.loading = false;  // Después de 5 segundos, ocultamos el spinner
-    }, 5000);
+      this.loading = false;  // Después de 3 segundos, ocultamos el spinner
+    }, 3000);
   }
 
   toggleMenu():void{
