@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        anton: ['"Anton"', 'sans-serif'], // Fuente Anton
+        rubik: ['"Rubik"', 'sans-serif'], // Fuente Rubik
+      },
+    },
   },
   plugins: [],
-}
+};
