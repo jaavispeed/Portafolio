@@ -1,4 +1,4 @@
-<div class="relative h-screen flex flex-col items-center justify-center text-center">
+<div class="relative h-screen flex items-center justify-center text-center bg-white">
 
   <!-- Spinner -->
   <div *ngIf="loading" class="absolute inset-0 flex items-center justify-center z-20 bg-white bg-opacity-50">
@@ -6,30 +6,44 @@
   </div>
 
   <!-- Contenido principal -->
-  <div [class.hidden]="loading" class="z-10">
-    <!-- Nombre y título profesional centrados -->
-    <h1 class="text-4xl font-bold animate__animated animate__fadeInDown">
-      Javier Rodriguez
-  </h1>
-      <p class="text-xl mt-2 animate__animated animate__fadeInDown">Ingeniero Informático</p>
-
-    <!-- Botón de hamburguesa en la esquina superior izquierda -->
-    <button
-      class="absolute top-4 left-4 flex flex-col items-center justify-between w-8 h-6 space-y-1 animate__animated animate__fadeInDown"
-      (click)="toggleMenu()"
-      aria-label="Menú de navegación">
-      <div class="w-8 h-1 bg-black rounded-md"></div>
-      <div class="w-8 h-1 bg-black rounded-md"></div>
-      <div class="w-8 h-1 bg-black rounded-md"></div>
-    </button>
-
-    <!-- Menú desplegable -->
-    <div *ngIf="menuOpen" class="absolute top-12 left-4 bg-white shadow-lg rounded-md w-40 p-4">
-      <ul>
-        <li class="py-2">Sobre mi</li>
-        <li class="py-2">Mis proyectos</li>
-        <li class="py-2">Contáctame</li>
-      </ul>
+  <div
+    [class.hidden]="loading"
+    [ngClass]="{ 'transition-style': !loading }"
+    class="z-10 w-full flex clip-0 overflow-hidden">
+    <!-- Parte izquierda con fondo negro -->
+    <div class="w-1/2 p-8 flex items-center justify-center bg-black text-white">
+      <h1 class="text-4xl font-bold animate__animated animate__fadeInDown">
+        ¡Hola, bienvenido a mi portafolio!
+      </h1>
     </div>
+
+    <!-- Parte derecha con fondo blanco -->
+    <div class="w-1/2 p-8 flex flex-col items-center justify-center bg-white">
+      <h1 class="text-4xl font-bold animate__animated animate__fadeInDown">
+        Javier Rodríguez
+      </h1>
+      <p class="text-xl mt-2 animate__animated animate__fadeInDown">
+        Ingeniero Informático
+      </p>
+    </div>
+  </div>
+
+  <!-- Botón de hamburguesa en la esquina superior izquierda -->
+  <button
+    class="absolute top-4 left-4 flex flex-col items-center justify-between w-8 h-6 space-y-1 animate__animated animate__fadeInDown"
+    (click)="toggleMenu()"
+    aria-label="Menú de navegación">
+    <div class="w-8 h-1 bg-black rounded-md"></div>
+    <div class="w-8 h-1 bg-black rounded-md"></div>
+    <div class="w-8 h-1 bg-black rounded-md"></div>
+  </button>
+
+  <!-- Menú desplegable -->
+  <div *ngIf="menuOpen" class="absolute top-12 left-4 bg-white shadow-lg rounded-md w-40 p-4">
+    <ul>
+      <li class="py-2 text-left">Sobre mi</li>
+      <li class="py-2 text-left">Mis proyectos</li>
+      <li class="py-2 text-left">Contáctame</li>
+    </ul>
   </div>
 </div>
