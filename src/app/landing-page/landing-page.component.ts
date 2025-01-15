@@ -11,7 +11,7 @@ import SpinnerComponent from "../shared/pages/spinner/spinner.component";
 })
 export default class LandingPageComponent {
 
-  loading: boolean = true;
+  loading: boolean = false;
   menuOpen: boolean = false;
 
   ngOnInit(): void {
