@@ -1,9 +1,8 @@
-<div class="relative h-screen flex items-center justify-center text-center bg-white">
-
-  <!-- Spinner -->
-  <div *ngIf="loading" class="absolute inset-0 flex items-center justify-center z-20 bg-white bg-opacity-50">
-    <app-spinner></app-spinner>
-  </div>
+<!-- Spinner -->
+<div *ngIf="loading" class="absolute inset-0 flex items-center justify-center z-20 bg-white bg-opacity-50">
+  <app-spinner></app-spinner>
+</div>
+<div class="relative h-screen flex items-center justify-center text-center bg-white" *ngIf="!loading">
 
   <!-- Encabezado -->
   <header
