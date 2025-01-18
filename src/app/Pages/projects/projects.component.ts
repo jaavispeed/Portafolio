@@ -45,7 +45,7 @@ export default class ProjectsComponent {
     {
       name: 'Sistema de Autenticacion',
       role: 'Desarrollo FullStack',
-      image: '',
+      image: 'LoginAndRegister.PNG',
       description: [
         { title: 'Sistema de Login', detail: 'Permite a los usuarios iniciar sesión de forma segura.' },
         { title: 'Sistema de Registro', detail: 'Los usuarios pueden registrarse en la plataforma.' },
