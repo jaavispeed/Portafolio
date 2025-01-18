@@ -13,7 +13,7 @@ import ProjectsComponent from '../projects/projects.component';
 })
 export default class LandingPageComponent {
 
-  loading: boolean = true;
+  loading: boolean = false;
   menuOpen: boolean = false;
 
   ngOnInit(): void {
