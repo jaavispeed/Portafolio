@@ -23,22 +23,32 @@ export default class LandingPageComponent {
     }, 3000);
   }
 
-  toggleMenu():void{
+  toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
 
-    // Controlamos el tamaño de la ventana para restaurar el menú
-    @HostListener('window:resize')
-    onResize() {
-      if (window.innerWidth >= 768) {  // El umbral puede ser el de 'md' o cualquier tamaño que decidas
-        this.menuOpen = false; // Restauramos el menú al tamaño grande
-      }
+  // Controlamos el tamaño de la ventana para restaurar el menú
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth >= 768) {  // El umbral puede ser el de 'md' o cualquier tamaño que decidas
+      this.menuOpen = false; // Restauramos el menú al tamaño grande
     }
+  }
 
-  scrollToAboutMe() {
-    const aboutMeElement = document.getElementById('projects');
-    if (aboutMeElement) {
-      aboutMeElement.scrollIntoView({
+  scrollToHome() {
+    const homeElement = document.getElementById('home');
+    if (homeElement) {
+      homeElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
+
+
+  scrollToProjects() {
+    const projectsElement = document.getElementById('projects');
+    if (projectsElement) {
+      projectsElement.scrollIntoView({
         behavior: 'smooth'
       });
     }
