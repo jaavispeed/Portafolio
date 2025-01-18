@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import SpinnerComponent from "../../shared/pages/spinner/spinner.component";
 import { RouterModule } from '@angular/router';
-import AboutMeComponent from '../about-me/about-me.component';
+import ProjectsComponent from '../projects/projects.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, SpinnerComponent, RouterModule, AboutMeComponent],
+  imports: [CommonModule, SpinnerComponent, RouterModule, ProjectsComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
@@ -35,7 +35,7 @@ export default class LandingPageComponent {
     }
 
   scrollToAboutMe() {
-    const aboutMeElement = document.getElementById('about-me');
+    const aboutMeElement = document.getElementById('projects');
     if (aboutMeElement) {
       aboutMeElement.scrollIntoView({
         behavior: 'smooth'
