@@ -5,12 +5,21 @@
   </h2>
 
   <div class="flex items-center gap-6 mt-6">
-    <!-- Flecha izquierda -->
+    <!-- Flecha izquierda más grande -->
     <button
-      class="p-3 bg-gray-300 hover:bg-gray-400 rounded-full shadow-lg transition"
+      class="p-3 rounded-full transition flex items-center justify-center hover:scale-110"
       (click)="changeCard('prev')"
     >
-      <i class="fas fa-arrow-left text-gray-600"></i>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-8 h-8 text-black"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
     </button>
 
     <!-- Tarjeta dinámica -->
@@ -65,12 +74,21 @@
       </div>
     </div>
 
-    <!-- Flecha derecha -->
+    <!-- Flecha derecha más grande -->
     <button
-      class="p-3 bg-gray-300 hover:bg-gray-400 rounded-full shadow-lg transition"
+      class="p-3 rounded-full transition flex items-center justify-center hover:scale-110"
       (click)="changeCard('next')"
     >
-      <i class="fas fa-arrow-right text-gray-600"></i>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-8 h-8 text-black"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
     </button>
   </div>
 </div>
