@@ -16,9 +16,11 @@ import ContactoComponent from "../contacto/contacto.component";
 export default class LandingPageComponent {
 
   loading: boolean = true;
-  menuOpen: boolean = true;
+  menuOpen: boolean = false;
 
   ngOnInit(): void {
+    this.checkScreenSize();
+
     setTimeout(() => {
       this.loading = false;
     }, 3000);
@@ -28,12 +30,19 @@ export default class LandingPageComponent {
     this.menuOpen = !this.menuOpen;
   }
 
-
-  @HostListener('window:resize')
-  onResize() {
-    if (window.innerWidth >= 768) {
-      this.menuOpen = false;
+  // Esta función verifica el tamaño de la pantalla y ajusta el estado del menú
+  checkScreenSize(): void {
+    if (window.innerWidth < 768) {
+      this.menuOpen = false;  // Cierra el menú por defecto en pantallas pequeñas
+    } else {
+      this.menuOpen = true;   // Mantén el menú abierto en pantallas grandes
     }
+  }
+
+  // Detecta el cambio de tamaño de la ventana y cierra el menú si es necesario
+  @HostListener('window:resize', ['$event'])
+  onResize(): void {
+    this.checkScreenSize(); // Llama al método para comprobar el tamaño de la ventana
   }
 
   scrollToHome() {

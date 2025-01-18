@@ -18,7 +18,7 @@
       </button>
 
       <!-- Navegación -->
-      <nav [class.hidden]="menuOpen" class="w-full flex flex-col items-center gap-3 md:flex-row md:items-center md:justify-center md:gap-5 md:rounded-full">
+      <nav *ngIf="menuOpen" class="md:hidden" class="w-full flex flex-col items-center gap-3 md:flex-row md:items-center md:justify-center md:gap-5 md:rounded-full">
 
         <a aria-current="page" class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 text-center cursor-pointer" (click)="scrollToHome()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
