@@ -41,8 +41,8 @@
 
           Skills
         </a>
-        <a class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 text-center"
-          href="#">
+        <a class="inline-flex items-center cursor-pointer gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 text-center"
+        (click)="scrollToContact()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -75,3 +75,5 @@
 <app-projects *ngIf="!loading" class="animate__animated animate__fadeInDown"></app-projects>
 <hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
 <app-skills *ngIf="!loading"></app-skills>
+<hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
+<app-contacto></app-contacto>

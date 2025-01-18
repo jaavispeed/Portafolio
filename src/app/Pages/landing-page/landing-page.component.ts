@@ -4,11 +4,12 @@ import SpinnerComponent from "../../shared/pages/spinner/spinner.component";
 import { RouterModule } from '@angular/router';
 import ProjectsComponent from '../projects/projects.component';
 import SkillsComponent from '../skills/skills.component';
+import ContactoComponent from "../contacto/contacto.component";
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, SpinnerComponent, RouterModule, ProjectsComponent, SkillsComponent],
+  imports: [CommonModule, SpinnerComponent, RouterModule, ProjectsComponent, SkillsComponent, ContactoComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
@@ -58,6 +59,15 @@ export default class LandingPageComponent {
     const skillsElement = document.getElementById('skills');
     if (skillsElement) {
       skillsElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  scrollToContact() {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({
         behavior: 'smooth'
       });
     }
