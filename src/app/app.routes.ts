@@ -10,6 +10,6 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () => import('./landing-page/landing-page.component')
-  }
+    loadComponent: () => import('./Pages/landing-page/landing-page.component')
+  },
 ];
