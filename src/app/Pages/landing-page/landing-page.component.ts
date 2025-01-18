@@ -20,7 +20,7 @@ export default class LandingPageComponent {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.loading = false;  // Después de 3 segundos, ocultamos el spinner
+      this.loading = false;
     }, 3000);
   }
 
@@ -28,11 +28,11 @@ export default class LandingPageComponent {
     this.menuOpen = !this.menuOpen;
   }
 
-  // Controlamos el tamaño de la ventana para restaurar el menú
+
   @HostListener('window:resize')
   onResize() {
-    if (window.innerWidth >= 768) {  // El umbral puede ser el de 'md' o cualquier tamaño que decidas
-      this.menuOpen = false; // Restauramos el menú al tamaño grande
+    if (window.innerWidth >= 768) {
+      this.menuOpen = false;
     }
   }
 
