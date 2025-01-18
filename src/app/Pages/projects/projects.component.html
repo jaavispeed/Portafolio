@@ -4,50 +4,73 @@
     Proyectos Destacados
   </h2>
 
-  <!-- Contenedor de tarjetas con la estructura del modal reemplazada -->
-  <div class="flex justify-center gap-6 mt-6">
-    <!-- Tarjeta con estructura del modal achicada -->
-    <div class="bg-white font-semibold text-center rounded-3xl border shadow-2xl p-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex flex-col justify-between">
-      <img class="mb-3 w-32 h-32 rounded-full shadow-2xl mx-auto" src="Needvox.png" alt="Needvox">
-      <h1 class="text-lg text-gray-700">Needvox</h1>
-      <h3 class="text-md text-gray-500 mt-1">Desarrollo Fullstack</h3>
+  <div class="flex items-center gap-6 mt-6">
+    <!-- Flecha izquierda -->
+    <button
+      class="p-3 bg-gray-300 hover:bg-gray-400 rounded-full shadow-lg transition"
+      (click)="changeCard('prev')"
+    >
+      <i class="fas fa-arrow-left text-gray-600"></i>
+    </button>
+
+    <!-- Tarjeta dinámica -->
+    <div
+      class="bg-white font-semibold text-center rounded-3xl border shadow-2xl p-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex flex-col justify-between"
+    >
+      <img
+        class="mb-3 w-32 h-32 rounded-full shadow-2xl mx-auto"
+        [src]="projects[currentIndex].image"
+        [alt]="projects[currentIndex].name"
+      />
+      <h1 class="text-lg text-gray-700">{{ projects[currentIndex].name }}</h1>
+      <h3 class="text-md text-gray-500 mt-1">{{ projects[currentIndex].role }}</h3>
 
       <!-- Lista de funcionalidades resumidas -->
       <ul class="text-sm text-left text-gray-400 mt-4 space-y-2">
-        <li><strong>Dashboard:</strong> Control de ventas, gastos y ganancias.</li>
-        <li><strong>Productos:</strong> CRUD para gestionar productos, precios y stock.</li>
-        <li><strong>Ventas:</strong> Agregar productos al carrito y generar ventas.</li>
-        <li><strong>Historial:</strong> Registro de ventas con opción de búsqueda por fecha.</li>
-        <li><strong>Compras:</strong> CRUD para gestionar compras y precios de productos.</li>
-        <li><strong>Perfil:</strong> Visualización y edición de la información del usuario.</li>
-        <li><strong>Admin:</strong> Gestión de usuarios y productos registrados.</li>
-        <li><strong>Seguridad:</strong> Guards, validaciones y alertas de sistema.</li>
-        <li><strong>Búsqueda:</strong> Buscar productos por código de barras o nombre.</li>
+        <li *ngFor="let feature of projects[currentIndex].description">
+          <strong>{{ feature.title }}:</strong> {{ feature.detail }}
+        </li>
       </ul>
 
-      <!-- Sección de Tecnologías Utilizadas -->
+      <!-- Tecnologías utilizadas -->
       <div class="mt-6">
         <h3 class="text-lg font-semibold text-gray-700">Tecnologías Utilizadas</h3>
         <div class="flex justify-center gap-4 mt-2">
-          <!-- Iconos de tecnologías centrados -->
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular" class="w-8 h-8" />
-          <img src="https://nestjs.com/img/logo-small.svg" alt="NestJS" class="w-8 h-8" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="Typescript" class="w-8 h-8" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="w-8 h-8" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-8 h-8" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg" alt="Vercel" class="w-8 h-8" />
+          <!-- Muestra dinámicamente las tecnologías con iconos -->
+          <img
+            *ngFor="let tech of projects[currentIndex].technologies"
+            [src]="tech.icon"
+            [alt]="tech.name"
+            class="w-8 h-8"
+          />
         </div>
       </div>
 
-      <!-- Botones para la página y el repositorio de GitHub con iconos -->
+      <!-- Botones para página y repositorio -->
       <div class="mt-4 flex justify-start gap-4">
-        <a href="https://needvox.com" target="_blank" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center">
+        <a
+          [href]="projects[currentIndex].pageUrl"
+          target="_blank"
+          class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center"
+        >
           <i class="fas fa-link mr-2"></i> Ver Página
         </a>
-        <a href="https://github.com/jaavispeed/Needvox" target="_blank" class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center">
+        <a
+          [href]="projects[currentIndex].repoUrl"
+          target="_blank"
+          class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center"
+        >
           <i class="fab fa-github mr-2"></i> Ver Repositorio
         </a>
       </div>
     </div>
+
+    <!-- Flecha derecha -->
+    <button
+      class="p-3 bg-gray-300 hover:bg-gray-400 rounded-full shadow-lg transition"
+      (click)="changeCard('next')"
+    >
+      <i class="fas fa-arrow-right text-gray-600"></i>
+    </button>
   </div>
 </div>
