@@ -63,5 +63,5 @@
     </div>
   </div>
 </div>
-<hr class="w-2/3 mx-auto border-t-2 mb-4 animated-line" />
+<hr *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line" />
 <app-projects *ngIf="!loading"></app-projects>
