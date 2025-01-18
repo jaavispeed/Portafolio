@@ -1,18 +1,64 @@
-<div id="projects" class="flex flex-col items-center justify-center h-screen bg-gradient-to-br">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-12 text-center" style="font-family: 'Rubik', sans-serif;">
+<div id="projects" class="flex flex-col items-center justify-center h-screen bg-gradient-to-br mt-10">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center"
+    style="font-family: 'Rubik', sans-serif;">
     Proyectos Destacados
   </h2>
 
-  <!-- Contenedor de tarjetas -->
+  <!-- Contenedor de tarjetas con la estructura del modal reemplazada -->
   <div class="flex justify-center gap-6 mt-6">
-    <!-- Tarjeta 1 -->
-    <div class="bg-white font-semibold text-center rounded-3xl border shadow-2xl p-6 max-w-sm flex flex-col justify-between h-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+    <!-- Tarjeta con estructura del modal -->
+    <div
+      class="bg-white font-semibold text-center rounded-3xl border shadow-2xl p-6 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl flex flex-col justify-between h-full">
       <img class="mb-3 w-40 h-40 rounded-full shadow-2xl mx-auto" src="Needvox.png" alt="Needvox">
       <h1 class="text-lg text-gray-700">Needvox</h1>
-      <p class="text-sm text-gray-400 mt-4">
-        Needvox es un proyecto colaborativo para la gestión y control de inventarios, diseñado para cualquier tipo de negocio.
-      </p>
-      <a href="https://needvox.com" class="mt-4 inline-block bg-black text-white py-2 px-4 rounded-xl hover:bg-gray-800 transition-colors">Ver Proyecto</a>
+      <h3 class="text-md text-gray-500 mt-1">Desarrollo Fullstack</h3>
+
+      <!-- Lista de funcionalidades resumidas -->
+      <!-- Lista de funcionalidades resumidas -->
+      <ul class="text-sm text-left text-gray-400 mt-4 space-y-2">
+        <li><strong>Dashboard:</strong> Control de ventas, gastos y ganancias.</li>
+        <li><strong>Productos:</strong> CRUD para gestionar productos, precios y stock.</li>
+        <li><strong>Ventas:</strong> Agregar productos al carrito y generar ventas.</li>
+        <li><strong>Historial:</strong> Registro de ventas con opción de búsqueda por fecha.</li>
+        <li><strong>Compras:</strong> CRUD para gestionar compras y precios de productos.</li>
+        <li><strong>Perfil:</strong> Visualización y edición de la información del usuario.</li>
+        <li><strong>Admin:</strong> Gestión de usuarios y productos registrados.</li>
+        <li><strong>Seguridad:</strong> Guards, validaciones y alertas de sistema.</li>
+        <li><strong>Búsqueda:</strong> Buscar productos por código de barras o nombre.</li>
+      </ul>
+
+
+      <!-- Sección de Tecnologías Utilizadas -->
+      <div class="mt-6">
+        <h3 class="text-lg font-semibold text-gray-700">Tecnologías Utilizadas</h3>
+        <div class="flex justify-center gap-6 mt-2">
+          <!-- Iconos de tecnologías centrados -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+            alt="Angular" class="w-10 h-10" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS"
+            class="w-10 h-10" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+            alt="Typescript" class="w-10 h-10" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL" class="w-10 h-10" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+            alt="Tailwind CSS" class="w-10 h-10" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg"
+            alt="Vercel" class="w-10 h-10" />
+        </div>
+      </div>
+
+      <!-- Botones para la página y el repositorio de GitHub con iconos -->
+      <div class="mt-6 flex justify-start gap-4">
+        <a href="https://needvox.com" target="_blank"
+          class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center">
+          <i class="fas fa-link mr-2"></i> Ver Página
+        </a>
+        <a href="https://github.com/jaavispeed/Needvox" target="_blank"
+          class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center">
+          <i class="fab fa-github mr-2"></i> Ver Repositorio
+        </a>
+      </div>
     </div>
   </div>
 </div>
