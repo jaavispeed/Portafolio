@@ -16,7 +16,7 @@ import ContactoComponent from "../contacto/contacto.component";
 export default class LandingPageComponent {
 
   loading: boolean = true;
-  menuOpen: boolean = false;
+  menuOpen: boolean = true;
 
   ngOnInit(): void {
     setTimeout(() => {
