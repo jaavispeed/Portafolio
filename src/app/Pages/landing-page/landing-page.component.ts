@@ -3,17 +3,18 @@ import { Component, HostListener } from '@angular/core';
 import SpinnerComponent from "../../shared/pages/spinner/spinner.component";
 import { RouterModule } from '@angular/router';
 import ProjectsComponent from '../projects/projects.component';
+import SkillsComponent from '../skills/skills.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, SpinnerComponent, RouterModule, ProjectsComponent],
+  imports: [CommonModule, SpinnerComponent, RouterModule, ProjectsComponent, SkillsComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
 export default class LandingPageComponent {
 
-  loading: boolean = true;
+  loading: boolean = false;
   menuOpen: boolean = false;
 
   ngOnInit(): void {
@@ -38,6 +39,15 @@ export default class LandingPageComponent {
     const aboutMeElement = document.getElementById('projects');
     if (aboutMeElement) {
       aboutMeElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  scrollToSkills() {
+    const skillsElement = document.getElementById('skills');
+    if (skillsElement) {
+      skillsElement.scrollIntoView({
         behavior: 'smooth'
       });
     }
