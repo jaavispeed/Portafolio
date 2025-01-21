@@ -72,9 +72,10 @@
     </div>
   </div>
 </div>
+
 <hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
-<app-projects *ngIf="!loading" class="animate__animated animate__fadeInDown"></app-projects>
+<app-projects id="projects" *ngIf="!loading" class="animate__animated animate__fadeInDown  p-4 pb-10"></app-projects>
 <hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
-<app-skills *ngIf="!loading"></app-skills>
+<app-skills id="skills" *ngIf="!loading"></app-skills>
 <hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
-<app-contacto *ngIf="!loading"></app-contacto>
+<app-contacto id="contact" *ngIf="!loading"></app-contacto>
