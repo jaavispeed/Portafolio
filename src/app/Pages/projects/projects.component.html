@@ -1,94 +1,96 @@
-<div id="projects" class="flex flex-col items-center justify-center h-screen bg-gradient-to-br mt-10">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center"
-    style="font-family: 'Rubik', sans-serif;">
-    Proyectos Destacados
-  </h2>
+<div class="flex flex-wrap justify-center items-center gap-2 min-h-screen">
+  <!-- Card 1 -->
+  <div
+    class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:max-w-sm sm:rounded-lg sm:px-10 w-full sm:w-[calc(50%-8px)] md:w-[calc(33.333%-8px)] h-[500px] flex flex-col">
+    <span
+      class="absolute top-10 z-0 h-20 w-20 rounded-full bg-black transition-all duration-300 group-hover:scale-[30] group-hover:bg-gray-700 opacity-0 group-hover:opacity-100"></span>
 
-  <div class="flex items-center gap-6 mt-6">
-    <!-- Flecha izquierda más grande -->
-    <button
-      class="p-3 rounded-full transition flex items-center justify-center hover:scale-110"
-      (click)="changeCard('prev')"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-8 h-8 text-black"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-      </svg>
-    </button>
+    <div class="relative z-10 mx-auto max-w-md flex-grow">
+      <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-white transition-all duration-300">Needvox</h2>
 
-    <!-- Tarjeta dinámica con efecto -->
-    <div
-      class="bg-white font-semibold text-center rounded-3xl border shadow-2xl p-4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex flex-col justify-between transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
-    >
-      <img
-        class="mb-3 w-32 h-32 rounded-full shadow-2xl mx-auto"
-        [src]="projects[currentIndex].image"
-        [alt]="projects[currentIndex].name"
-      />
-      <h1 class="text-lg text-gray-700">{{ projects[currentIndex].name }}</h1>
-      <h3 class="text-md text-gray-500 mt-1">{{ projects[currentIndex].role }}</h3>
+      <div class="pt-5 flex space-x-4">
+        <a href="https://tupagina.com" target="_blank"
+          class="flex items-center bg-black text-white px-3 py-1.5 rounded-full text-sm group-hover:bg-white group-hover:text-black transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-5 mr-2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+          <span class="text-xs">Ver página</span>
+        </a>
 
-      <!-- Lista de funcionalidades resumidas -->
-      <ul class="text-sm text-left text-gray-400 mt-4 space-y-2">
-        <li *ngFor="let feature of projects[currentIndex].description">
-          <strong>{{ feature.title }}:</strong> {{ feature.detail }}
-        </li>
-      </ul>
+        <a href="https://github.com/jaavispeed/needvox" target="_blank"
+          class="flex items-center bg-gray-200 text-black px-3 py-1.5 rounded-full text-sm group-hover:bg-white group-hover:text-black transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+            class="h-5 mr-2" />
+          <span class="text-xs">Github</span>
+        </a>
 
-      <!-- Tecnologías utilizadas -->
-      <div class="mt-6">
-        <h3 class="text-lg font-semibold text-gray-700">Tecnologías Utilizadas</h3>
-        <div class="flex justify-center gap-4 mt-2">
-          <!-- Muestra dinámicamente las tecnologías con iconos -->
-          <img
-            *ngFor="let tech of projects[currentIndex].technologies"
-            [src]="tech.icon"
-            [alt]="tech.name"
-            class="w-8 h-8"
-          />
-        </div>
       </div>
 
-      <!-- Botones para página y repositorio -->
-      <div class="mt-4 flex justify-start gap-4">
-        <a
-          [href]="projects[currentIndex].pageUrl"
-          target="_blank"
-          class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center"
-        >
-          <i class="fas fa-link mr-2"></i> Ver Página
-        </a>
-        <a
-          [href]="projects[currentIndex].repoUrl"
-          target="_blank"
-          class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center"
-        >
-          <i class="fab fa-github mr-2"></i> Ver Repositorio
-        </a>
+      <div
+        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+        <p>Needvox es una plataforma Fullstack creada para gestionar almacenes de barrio, permitiendo controlar ventas,
+          stock y productos en tiempo real. Con funcionalidades como la gestión de productos, historial de ventas,
+          compras, administración de usuarios y seguridad, facilita el manejo eficiente del negocio.</p>
       </div>
     </div>
 
-    <!-- Flecha derecha más grande -->
-    <button
-      class="p-3 rounded-full transition flex items-center justify-center hover:scale-110"
-      (click)="changeCard('next')"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-8 h-8 text-black"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-      </svg>
-    </button>
+    <!-- Icons  -->
+    <div class="pt-5 flex justify-start items-center gap-4 z-20">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+        class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+        class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+        class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+        class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" class="h-8 w-8" />
+    </div>
   </div>
+
+  <!-- Card 2 -->
+  <div
+    class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:max-w-sm sm:rounded-lg sm:px-10 w-full sm:w-[calc(50%-8px)] md:w-[calc(33.333%-8px)] h-[500px] flex flex-col">
+    <span
+      class="absolute top-10 z-0 h-20 w-20 rounded-full bg-black transition-all duration-300 group-hover:scale-[30] group-hover:bg-gray-700 opacity-0 group-hover:opacity-100"></span>
+    <div class="relative z-10 mx-auto max-w-md flex-grow">
+      <h2 class="text-2xl font-semibold text-gray-800 group-hover:text-white transition-all duration-300">Sistema de
+        autenticación</h2>
+
+
+      <div class="pt-5 flex space-x-4">
+
+        <a href="https://github.com/jaavispeed/login-and-register" target="_blank"
+          class="flex items-center bg-gray-200 text-black px-3 py-1.5 rounded-full text-sm group-hover:bg-white group-hover:text-black transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+            class="h-5 mr-2" />
+          <span class="text-xs">Github</span>
+        </a>
+
+      </div>
+
+      <div
+        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+        <p>Este proyecto implementa un sistema básico de login, registro y un perfil de usuario que muestra los datos.
+          Además, incluye protección de rutas, validación de formularios y manejo de errores.</p>
+      </div>
+    </div>
+
+    <!-- Icons -->
+    <div class="pt-5 flex justify-start items-center gap-4 z-20">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+        class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" class="h-8 w-8" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+        class="h-8 w-8" />
+
+
+    </div>
+  </div>
+
 </div>
