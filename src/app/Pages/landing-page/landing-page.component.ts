@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import ProjectsComponent from '../projects/projects.component';
 import SkillsComponent from '../skills/skills.component';
 import ContactoComponent from "../contacto/contacto.component";
+import { DarkModeService } from '../../services/dark-mode.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -15,7 +16,10 @@ import ContactoComponent from "../contacto/contacto.component";
 })
 export default class LandingPageComponent {
 
-  loading: boolean = true;
+  constructor(public darkModeService: DarkModeService) {}
+
+  isDarkMode: boolean = false;
+  loading: boolean = false;
   menuOpen: boolean = false;
 
   ngOnInit(): void {
@@ -24,6 +28,10 @@ export default class LandingPageComponent {
     setTimeout(() => {
       this.loading = false;
     }, 3000);
+  }
+
+  toggleDarkMode() {
+    this.darkModeService.toggleDarkMode();
   }
 
   toggleMenu(): void {

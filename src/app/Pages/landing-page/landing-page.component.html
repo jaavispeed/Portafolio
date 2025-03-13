@@ -3,46 +3,56 @@
   <app-spinner></app-spinner>
 </div>
 
-<div class="relative h-screen flex items-center justify-center text-center bg-white" *ngIf="!loading">
+<div class="relative h-screen flex items-center justify-center text-center dark:bg-gray-900" *ngIf="!loading">
 
   <!-- Encabezado -->
-  <header class="fixed inset-x-0 top-0 z-30 mx-auto w-11/12 max-w-screen-sm border border-gray-100 bg-white/80 py-3 shadow-lg backdrop-blur-lg md:top-4 md:rounded-3xl lg:w-3/4 animate__animated animate__fadeInDown">
+  <header
+    class=" fixed inset-x-0 top-0 z-30 mx-auto w-11/12 max-w-screen-sm border dark:bg-gray-900 border-gray-100 bg-white/80 py-3 shadow-lg backdrop-blur-lg md:top-4 md:rounded-3xl lg:w-3/4 animate__animated animate__fadeInDown ">
     <div class="px-4 flex flex-wrap items-center justify-between">
-      <!-- Logo u otro contenido fijo -->
-
       <!-- Botón de menú hamburguesa -->
-      <button (click)="toggleMenu()" class="md:hidden text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6h15M4.5 12h15M4.5 18h15"/>
+      <button (click)="toggleMenu()" class="md:hidden text-gray-900 dark:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6h15M4.5 12h15M4.5 18h15" />
         </svg>
       </button>
 
       <!-- Navegación -->
-      <nav *ngIf="menuOpen" class="md:hidden" class="w-full flex flex-col items-center gap-3 md:flex-row md:items-center md:justify-center md:gap-5 md:rounded-full">
+      <nav *ngIf="menuOpen"
+        class="w-full flex flex-col items-center gap-3 bg-white dark:bg-gray-900 md:flex-row md:items-center md:justify-center md:gap-5 md:rounded-full p-3">
 
-        <a aria-current="page" class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 text-center cursor-pointer" (click)="scrollToHome()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        <a class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer"
+          (click)="scrollToHome()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
           </svg>
           Inicio
         </a>
 
-        <a aria-current="page" class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 text-center cursor-pointer" (click)="scrollToProjects()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"/>
+        <a class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer"
+          (click)="scrollToProjects()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
           </svg>
-          Projectos
+          Proyectos
         </a>
-        <a class="inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 text-center"
-          (click)="scrollToSkills()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-          </svg>
 
+        <a class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer"
+          (click)="scrollToSkills()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+          </svg>
           Skills
         </a>
-        <a class="inline-flex items-center cursor-pointer gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 text-center"
-        (click)="scrollToContact()">
+
+        <a class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer"
+          (click)="scrollToContact()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -52,30 +62,55 @@
         </a>
       </nav>
     </div>
+
+    <!-- Botón Dark Mode -->
+    <div class="fixed top-4 right-6 z-40">
+      <button (click)="toggleDarkMode()" class="h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+        <svg class="fill-violet-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg class="fill-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+
   </header>
 
-  <div id="home" class="relative h-screen flex items-center justify-center text-center animate__animated animate__fadeInDown bg-white" *ngIf="!loading">
+
+
+  <div id="home"
+    class="dark:bg-gray-900 relative h-screen flex items-center justify-center text-center animate__animated animate__fadeInDown bg-white"
+    *ngIf="!loading">
     <div class="flex flex-col items-center justify-center text-center px-6 max-w-screen-md overflow-hidden">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4" style="font-family: 'Rubik', sans-serif;">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+        style="font-family: 'Rubik', sans-serif;">
         ¡Hola, soy Javier Rodríguez! 👋
       </h1>
-      <h1 class="text-xl sm:text-2xl md:text-3xl font-medium text-gray-700 mb-4" style="font-family: 'Rubik', sans-serif;">
+      <h1 class="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 dark:text-white mb-4"
+        style="font-family: 'Rubik', sans-serif;">
         Soy Ingeniero Informático.
       </h1>
-      <h1 class="text-sm sm:text-base md:text-lg lg:text-xl text-left text-gray-600" style="font-family: 'Rubik', sans-serif;">
-        Recién titulado y con muchas ganas de seguir aprendiendo y creciendo en el mundo de la tecnología. Me apasiona desarrollar soluciones eficientes, fáciles de usar y mantener. Aunque soy nuevo en el campo, siempre busco mejorar mis habilidades y aportar en proyectos de equipo. Creo que la colaboración es esencial y estoy dispuesto a seguir desarrollándome para generar un impacto positivo.
+      <h1 class="text-sm sm:text-base md:text-lg lg:text-xl text-left text-gray-700 dark:text-white"
+        style="font-family: 'Rubik', sans-serif;">
+        Recién titulado y con muchas ganas de seguir aprendiendo y creciendo en el mundo de la tecnología. Me apasiona
+        desarrollar soluciones eficientes, fáciles de usar y mantener. Aunque soy nuevo en el campo, siempre busco
+        mejorar mis habilidades y aportar en proyectos de equipo. Creo que la colaboración es esencial y estoy dispuesto
+        a seguir desarrollándome para generar un impacto positivo.
       </h1>
-      <a href="CV_JavierRodriguez.pdf" target="_blank" class="inline-block px-6 py-3 mt-6 mb-6 bg-black text-white font-semibold text-lg rounded-lg transform transition-all duration-300 hover:bg-gray-800 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50">
+      <a href="CV_JavierRodriguez.pdf" target="_blank"
+        class="inline-block px-6 py-3 mt-6 mb-6 bg-black  text-white font-semibold text-lg rounded-lg transform transition-all duration-300 hover:bg-gray-800 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50">
         <i class="fas fa-file-pdf mr-3"></i> Mira mi CV
       </a>
 
     </div>
   </div>
 </div>
-
-<hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
+<hr *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
 <app-projects id="projects" *ngIf="!loading" class="animate__animated animate__fadeInDown  p-4 pb-10"></app-projects>
-<hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
+<hr *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
 <app-skills id="skills" *ngIf="!loading"></app-skills>
-<hr  *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
+<hr *ngIf="!loading" class="w-2/3 mx-auto border-t-2 mb-4 animated-line animate__animated animate__fadeInDown" />
 <app-contacto id="contact" *ngIf="!loading"></app-contacto>
