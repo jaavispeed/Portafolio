@@ -19,7 +19,7 @@ export default class LandingPageComponent {
   constructor(public darkModeService: DarkModeService) {}
 
   isDarkMode: boolean = false;
-  loading: boolean = true;
+  loading: boolean = false;
   menuOpen: boolean = false;
 
   ngOnInit(): void {
